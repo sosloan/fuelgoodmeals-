@@ -1,0 +1,34 @@
+.account-popup {
+  --f7-popup-tablet-border-radius: 15px;
+}
+.account-page {
+  --f7-navbar-height: 56px;
+  --f7-list-button-text-align: left;
+  --f7-list-margin-vertical: 20px;
+  .dark & {
+    --f7-navbar-bg-color: #2c2c2e;
+    --f7-navbar-bg-color-rgb: 50, 50, 50;
+    --f7-page-bg-color: #1c1c1e;
+    --f7-list-bg-color: #2c2c2e;
+    --f7-block-strong-bg-color: #2c2c2e;
+  }
+  .account-user {
+    .item-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .item-title {
+      font-weight: normal;
+    }
+    .item-subtitle {
+      opacity: 0.55;
+    }
+    img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+    }
+  }
+}

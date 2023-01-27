@@ -1,0 +1,60 @@
+.arcade-hero-app {
+  position: absolute;
+  bottom: 32px;
+  left: calc(20px + var(--f7-safe-area-left));
+  right: calc(20px + var(--f7-safe-area-left));
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+  padding: 20px;
+  border-radius: 25px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: saturate(180%) blur(20px);
+  &.active-state {
+    opacity: 1 !important;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 21%;
+    flex-shrink: 0;
+    margin-right: 10px;
+  }
+  &-inner {
+    flex-shrink: 10;
+    min-width: 0;
+    margin-right: 10px;
+  }
+  &-label {
+    text-transform: uppercase;
+    opacity: 0.55;
+    font-weight: bold;
+    font-size: 11px;
+  }
+  &-title {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  &-subtitle {
+    font-size: 13px;
+    font-weight: normal;
+    opacity: 0.55;
+  }
+  &-title,
+  &-subtitle {
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .button {
+    --f7-button-bg-color: #7f797b;
+    --f7-button-pressed-bg-color: #504a4c;
+    --f7-button-text-color: #fff;
+    width: auto;
+    flex-shrink: 0;
+    margin-left: auto;
+    min-width: 70px;
+  }
+}

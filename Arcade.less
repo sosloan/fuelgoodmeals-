@@ -1,0 +1,117 @@
+.appstore-arcade-page {
+  .appstore-page-title {
+    font-size: 60px;
+    height: 52px;
+    color: #fff;
+  }
+}
+.arcade-hero-swiper {
+  --swiper-theme-color: #fff;
+  --offset: calc(
+    var(--f7-navbar-height) + var(--f7-navbar-large-title-height) +
+      var(--f7-safe-area-top)
+  );
+  transform: translate3d(0, 0, 0);
+  height: 64vh;
+  position: relative;
+  top: calc(-1 * var(--offset));
+  margin-bottom: calc(-1 * var(--offset));
+  z-index: -1;
+  &-image {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-wrapper {
+    overflow-y: hidden;
+  }
+}
+
+.arcade-promo {
+  background: var(--f7-bars-bg-color);
+  padding-top: 28px;
+  padding-bottom: 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    i {
+      font-size: 16px;
+      position: relative;
+      top: -2px;
+    }
+    span {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.05em;
+      margin-left: -1px;
+    }
+  }
+  &-button {
+    --f7-button-fill-bg-color: rgba(0, 0, 0, 0.07);
+    --f7-button-fill-pressed-bg-color: rgba(0, 0, 0, 0.4);
+    --f7-button-large-font-weight: bold;
+    --f7-button-large-text-transform: none;
+    --f7-button-border-radius: 10px;
+    --f7-button-fill-text-color: #000;
+
+    max-width: 220px;
+    width: 100%;
+  }
+  .dark &-button {
+    --f7-button-fill-text-color: #fff;
+    --f7-button-fill-bg-color: rgba(255, 255, 255, 0.11);
+    --f7-button-fill-pressed-bg-color: rgba(255, 255, 255, 0.075);
+  }
+  &-games {
+    margin-bottom: 20px;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    img {
+      width: 86px;
+      height: 86px;
+      border-radius: 21%;
+      object-fit: cover;
+      object-position: center;
+      + img {
+        margin-left: 10px;
+      }
+    }
+    &-row {
+      display: flex;
+    }
+    &-row + &-row {
+      margin-left: 48px;
+      margin-top: 10px;
+    }
+  }
+  &-games-scroll {
+    animation: arcade-games-promo-scroll 40s forwards linear;
+    &-reverse {
+      animation: arcade-games-promo-scroll-reverse 40s forwards linear;
+    }
+  }
+}
+@keyframes arcade-games-promo-scroll {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(calc(-100% + 100vw));
+  }
+}
+@keyframes arcade-games-promo-scroll-reverse {
+  from {
+    transform: translateX(calc(-100% + 100vw));
+  }
+  to {
+    transform: translateX(0px);
+  }
+}

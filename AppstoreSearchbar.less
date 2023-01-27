@@ -1,0 +1,82 @@
+.appstore-searchbar {
+  --f7-searchbar-in-page-content-input-border-radius: 10px;
+  --f7-searchbar-inner-padding-left: 12px;
+  --f7-searchbar-inner-padding-right: 12px;
+  --f7-searchbar-input-height: 36px;
+  .dark & {
+    --f7-searchbar-input-bg-color: #1c1c1e;
+  }
+
+  position: sticky;
+  top: calc(-1 * var(--f7-navbar-large-title-height)) !important;
+  transform: translateY(0px) !important;
+  transition-duration: 300ms;
+  transition-property: background-color, backdrop-filter, transform, top !important;
+  .searchbar {
+    --f7-safe-area-left: 0px;
+    --f7-safe-area-right: 0px;
+    width: 100% !important;
+  }
+  .page:not(.page-with-navbar-large-collapsed):not(.with-appstore-searchbar-enabled)
+    & {
+    backdrop-filter: blur(0px) !important;
+    background-color: transparent !important;
+    --f7-bars-border-color: transparent;
+  }
+}
+.navbar.with-appstore-searchbar-enabled {
+  pointer-events: none;
+  transform: translateY(calc(-1 * var(--f7-navbar-height)));
+  --f7-navbar-border-color: transparent;
+  .title,
+  .title-large {
+    opacity: 0 !important;
+  }
+  .navbar-bg {
+    opacity: 1 !important;
+    transform: none !important;
+    height: 100% !important;
+  }
+  .navbar-bg,
+  .title,
+  .title-large,
+  .title-large-text {
+    animation: none !important;
+  }
+}
+.page.with-appstore-searchbar-enabled {
+  .appstore-page-title {
+    opacity: 0;
+  }
+  .appstore-searchbar {
+    top: 0 !important;
+  }
+  .page-content {
+    transform: translateY(
+      calc(-1 * (var(--f7-navbar-height) + var(--f7-navbar-large-title-height)))
+    );
+    height: calc(
+      100% + var(--f7-navbar-height) + var(--f7-navbar-large-title-height)
+    );
+  }
+}
+
+.with-appstore-searchbar-enabled,
+.with-appstore-searchbar-closing {
+  &.navbar {
+    &,
+    .navbar-bg,
+    .navbar-inner .title,
+    .navbar-inner .title-large {
+      transition-duration: 300ms;
+      transition-property: opacity, transform;
+    }
+  }
+  &.page {
+    .appstore-page-title,
+    .page-content {
+      transition-duration: 300ms;
+      transition-property: opacity, transform;
+    }
+  }
+}
